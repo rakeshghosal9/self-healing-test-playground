@@ -3,62 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Form</title>
+    <title>Complex HTML Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #f0f0f0;
         }
-        .form-container {
-            width: 300px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-container h2 {
+        header, footer {
+            background-color: #333;
+            color: white;
             text-align: center;
+            padding: 1em 0;
         }
-        .form-container label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+        nav ul {
+            list-style: none;
+            padding: 0;
         }
-        .form-container input {
+        nav ul li {
+            display: inline;
+            margin-right: 1em;
+        }
+        section {
+            margin: 2em;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+        }
+        .grid-item {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
+            border-collapse: collapse;
+        }
+        table, th, td {
             border: 1px solid #ccc;
-            border-radius: 3px;
         }
-        .form-container button {
+        th, td {
+            padding: 0.5em;
+            text-align: left;
+        }
+        .media {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+        .media img {
+            max-width: 150px;
+            border-radius: 8px;
+        }
+        .media audio {
             width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h2>Login Form</h2>
-        <form action="#" method="POST">
-            <label for="username">Username</label>
-            <input type="text" id="username1" name="username" placeholder="Enter your username" required>
-
-            <label for="password">Password</label>
-            <input type="password" id="password1" name="password" placeholder="Enter your password" required>
-
-            <button type="submit">Submit</button>
+    <header>
+        <h1>Welcome to the Complex HTML Page</h1>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="#section1">Section 1</a></li>
+                <li class="nav-item"><a href="#section2">Section 2</a></li>
+                <li class="nav-item"><a href="#section3">Section 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="section1">
+        <h2>Form Example</h2>
+        <form action="/submit" method="post" class="form-container">
+            <label for="name">Name:</label>
+            <input type="text" class="input-field"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" class="input-field"><br><br>
+            <label for="message">Message:</label><br>
+            <textarea class="input-field" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" class="submit-button">
         </form>
-    </div>
+    </section>
+    <section id="section2">
+        <h2>Table Example</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice</td>
+                    <td>30</td>
+                    <td>New York</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>25</td>
+                    <td>San Francisco</td>
+                </tr>
+                <tr>
+                    <td>Charlie</td>
+                    <td>35</td>
+                    <td>Los Angeles</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="section3">
+        <h2>Media Example</h2>
+        <div class="media">
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+            <audio controls>
+                <source src="sample-audio.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Complex HTML Page. All rights reserved.</p>
+    </footer>
 </body>
 </html>
